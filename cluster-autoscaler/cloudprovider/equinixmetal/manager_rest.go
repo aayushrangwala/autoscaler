@@ -309,7 +309,7 @@ func createEquinixMetalManagerRest(configReader io.Reader, discoverOpts cloudpro
 		}
 	}
 
-	manager.authToken = metalAuthToken
+	manager.authToken = strings.TrimSpace(metalAuthToken)
 
 	for nodepool := range cfg.Nodegroupdef {
 		if opts.ClusterName == "" && cfg.Nodegroupdef[nodepool].ClusterName == "" {
